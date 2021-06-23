@@ -1,0 +1,15 @@
+{
+  "name": "electron-go-sidecar",
+  "version": "1.0.0",
+  "description": "Electron app with GO sidecar",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Igor Okulist",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^13.1.4"
+  }
+}

@@ -1,5 +1,5 @@
 const path = require('path')
-const gonodemodule = require('../nodegomodule');
+const gonodemodule = require('golangmodule');
 
 
 const { app, BrowserWindow, ipcMain } = require('electron')

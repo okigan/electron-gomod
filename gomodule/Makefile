@@ -4,7 +4,9 @@ setup-deps:
 	brew install protobuf
 	brew install protoc-gen-grpc-web
 
-compile-go:
+generate:
 	mkdir -p ./gen
 	PATH="${PATH}:$(go env GOPATH)/bin" go generate
-	go build -buildmode=c-archive -o ./build/gomodule.so golang.go
+
+compile-go:
+	go build -buildmode=c-archive -o ./build/gomodule.so

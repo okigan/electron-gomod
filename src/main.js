@@ -15,10 +15,8 @@ function createWindow() {
 
   win.loadFile('index.html')
   win.webContents.openDevTools()
-
-  // ipcMain.send('from_gonodemodule', gonodemodule.hello());
-
 }
+
 app.whenReady().then(() => {
   createWindow()
 
@@ -34,7 +32,7 @@ app.on('window-all-closed', function () {
 
 
 ipcMain.handle('a', async (event, arg) => {
-  console.log(arg) 
+  console.log(arg)
 
   return gonodemodule.hello()
 })

@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
-    "golangmodule": "file:native/nodegomodule"
+    "golangmodule": "file:native/nodegomodule",
+    "google-protobuf": "^3.17.3",
+    "grpc-web": "^1.2.1"
   },
   "config": {
     "forge": {

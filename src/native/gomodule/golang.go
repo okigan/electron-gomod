@@ -27,11 +27,15 @@ import (
 
 //export Hello
 func Hello() *C.char {
+	go func() {
+		run_server()
+	}()
+	time.Sleep(1000)
 	return C.CString("Hello world!")
 }
 
 // required to build
-func main() {
+func run_server() {
 
 	fmt.Println("Welcome to streaming HW monitoring")
 	lis, err := net.Listen("tcp", ":7777")
@@ -78,6 +82,10 @@ func main() {
 	// }()
 
 	//gRPCserver.GracefulStop()
+}
+
+// required to build
+func main() {
 }
 
 // https://github.com/charlieduong94/node-golang-native-addon-experiment

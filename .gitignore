@@ -3,5 +3,7 @@
 **/build/
 **/bin/
 
+gomodule/gen
+
 **/*.so
 **/*.swp

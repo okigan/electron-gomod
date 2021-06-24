@@ -1,3 +1,14 @@
+// go get -u google.golang.org/protobuf/cmd/protoc-gen-go
+// go install google.golang.org/protobuf/cmd/protoc-gen-go
+
+// go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
+// go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
+
+//go:generate protoc -I=./proto service.proto --go_out=./gen --go_opt=paths=source_relative
+//go:generate protoc -I=./proto service.proto --go-grpc_out=./gen
+//go:generate protoc -I=./proto service.proto --js_out=import_style=commonjs:./gen
+//go:generate protoc -I=./proto service.proto --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./gen
+
 package main
 
 import "C"

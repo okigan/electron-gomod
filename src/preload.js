@@ -1,4 +1,7 @@
-
+const {
+  contextBridge,
+  ipcRenderer
+} = require("electron");
 
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
@@ -10,7 +13,10 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText(`${dependency}-version`, process.versions[dependency])
   }
 
-  replaceText(`electron-native-addon`, "test")
+
+  ipcRenderer.invoke("a", "b").then((x) => {
+    replaceText(`electron-native-addon`, x)
+  })
 
 })
 

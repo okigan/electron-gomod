@@ -34,7 +34,7 @@ func main() {
 		panic(err)
 	}
 	// Create a timer to cancel
-	stop := time.NewTicker(7 * time.Second)
+	stop := time.NewTicker(60 * time.Second)
 	// Itterate stream
 	for {
 		select {

@@ -10,7 +10,7 @@ function createWindow() {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      webSecurity: false, //TODO: remove this
+      webSecurity: false, //TODO: remove this?
       allowRunningInsecureContent: true
     }
   })

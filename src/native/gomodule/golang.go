@@ -37,7 +37,7 @@ func Hello() *C.char {
 // required to build
 func run_server() {
 
-	fmt.Println("Welcome to streaming HW monitoring")
+	fmt.Println("Welcome to streaming HW monitoring2")
 	lis, err := net.Listen("tcp", ":7777")
 	if err != nil {
 		panic(err)
@@ -50,6 +50,7 @@ func run_server() {
 	hardwaremonitoring.RegisterHardwareMonitorServer(gRPCserver, s)
 
 	go func() {
+		fmt.Println("Starting server")
 		log.Fatal(gRPCserver.Serve(lis))
 	}()
 
@@ -72,8 +73,8 @@ func run_server() {
 	srv := &http.Server{
 		Handler:      r,
 		Addr:         "localhost:8080",
-		WriteTimeout: 15 * time.Second,
-		ReadTimeout:  15 * time.Second,
+		WriteTimeout: 150 * time.Second,
+		ReadTimeout:  150 * time.Second,
 	}
 
 	// host it

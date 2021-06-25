@@ -25,13 +25,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     var request = new EmptyRequest();
-    // Dont worry about the empty Metadata for now, thats covered in another article :)
     var stream = client.monitor(request, {});
     // Start listening on the data event, this is the event that is used to notify that new data arrives
     stream.on('data', function (response) {
-      // Convert Response to Object
       var stats = response.toObject();
-      // // Set our variable values
       // setCPU(stats.cpu);
       // setMemoryFree(stats.memoryFree);
       // setMemoryUsed(stats.memoryUsed);

@@ -1,4 +1,4 @@
-SUBDIRS := $(wildcard */.)
+SUBDIRS := gomodule nodegomodule #$(wildcard */.)
 
 all: $(SUBDIRS)
 

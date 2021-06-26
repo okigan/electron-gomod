@@ -10,13 +10,13 @@ function createWindow() {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      webSecurity: false, //TODO: remove this?
+      // webSecurity: false, //TODO: remove this?s
       allowRunningInsecureContent: true
     }
   })
 
   win.loadFile('index.html')
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 }
 
 app.whenReady().then(() => {

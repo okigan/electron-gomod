@@ -1,0 +1,26 @@
+name: CI
+
+on: [push,pull_request,workflow_dispatch]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest]
+        go: [ '1.16']
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup go
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ matrix.go }}
+      - name: step1
+        run: bash -c "pwd;  ls -la"
+      - run: |
+          brew install nodejs
+          make setup-build-env
+          make all

@@ -5,6 +5,8 @@ package main;
 option go_package = "./;hardwaremonitoring";
 
 
+
+
 // HardwareStats is a struct containing information about the systems Memory usage and CPU
 message HardwareStats {
     int32 cpu = 1;
